@@ -1,5 +1,5 @@
 # Ian Phillips  Portfolio
-My professional coding portfolio!
+My professional  BI/coding portfolio!
 
 Welcome to my portfolio
 
