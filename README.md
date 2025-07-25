@@ -1,4 +1,4 @@
-# Ian Phillips  portfolio
+# Ian Phillips  Portfolio
 My professional coding portfolio!
 
 Welcome to my portfolio
