@@ -16,11 +16,17 @@ Delivered automated project planning reports that enabled strategic prioritizati
 
 The Tableau REST API was used to automate QA before weekly meetings with Amazon (Amazon LMD), ensuring no revenue loss.<br>
 
-***Office 365 API:*** [here](https://github.com/iphillips-dev/portfolio/blob/main/office365_sharepoint_api_github_cleaned.py)<br>
+***Office 365 API Querying SharePoint Lists:*** [here](https://github.com/iphillips-dev/portfolio/blob/main/office365_sharepoint_api_github_cleaned.py)<br>
 
 Utilized to pull data from various SharePoint lists and other files. Data pulled was run through Python workflows and then fed into Power BI for reporting.<br>
 
 Linking my Python to SharePoint was highly beneficial! It allowed me to perform all data preparation in Python and feed it to reports rather than doing it in Excel or Power Query Editor.<br>
+
+***Office 365 API Reading/Writing Files:*** [here](https://github.com/iphillips-dev/portfolio/blob/main/office_365_rest_api_read_write_filesgithub_cleaned.py)<br>
+
+Utilized to pull read data in from files in SharePoint. Not all of our data was hosted in typical databases many finance projects I contibuted to were stored in SP sites.<br>
+
+Having the ability to pull files out then write them back in post prep helped streamline worfklows by linking Power BI directly into SP files and not tieing the report up in many different applications.<br>
 
 ***Power BI Refresh History API:*** [here](https://github.com/iphillips-dev/portfolio/blob/main/powerbi_refresh_history_api_github_cleaned.py)<br>
 
