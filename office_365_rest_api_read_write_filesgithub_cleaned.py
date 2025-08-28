@@ -14,18 +14,18 @@ from office365.sharepoint.client_context import ClientContext
 from office365.sharepoint.listitems.listitem import ListItem
 from office365.sharepoint.listitems.caml.query import CamlQuery
 from office365.sharepoint.files.file import File
+from office365.graph_client import GraphClient
 import sys
 import io
 from io import BytesIO
-from office365.graph_client import GraphClient
 import os
 
 
 ### information for authentication -- my org didn't allow basic (username,password) so they had to register an app in azure and provide me with the credetials.
 
-site_url = 'ROOT SHAREPOINT URL'
-client_secret = 'CLIENT SECRET FROM APP THAT WAS REGISTERED'
-client_id = 'ADD CLIENT ID'
+site_url = 'ROOT SHAREPOINT URL'                                        {entry required}
+client_secret = 'CLIENT SECRET FROM APP THAT WAS REGISTERED'            {entry required}
+client_id = 'ADD CLIENT ID'                                             {entry required}
 
 ### grabbing file from sharepont
 
@@ -51,12 +51,12 @@ DO ANY DATA PREPERATION YOU NEED BEFORE WRITING IT TO SHAREPOINT
 ### Writing your file to the sharepoint page
 
 try:
-    file_name = 'NAME OF YOUR FILE'
-    local_path = os.path.join(os.getcwd(), file_name) 
-    PUT YOUR DATAFRAME HERE.to_csv(local_path, index=False)
+    file_name = 'NAME OF YOUR FILE'                        {entry required}
+    local_path = os.path.join(os.getcwd(), file_name)      {entry required}
+    PUT YOUR DATAFRAME HERE.to_csv(local_path, index=False)   {entry required}
     
 
-    sharepoint_folder_name = 'Shared Documents/SUBFOLDER/FOLDER'
+    sharepoint_folder_name = 'Shared Documents/SUBFOLDER/FOLDER'            {entry required}
  
     credentials = ClientCredential(client_id, client_secret)
     ctx = ClientContext(site_url).with_credentials(credentials)
