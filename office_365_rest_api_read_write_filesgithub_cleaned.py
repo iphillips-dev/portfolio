@@ -8,6 +8,11 @@ pip install numpy pandas office365-rest-python-client
 ## packeges you need to import
 import numpy as np
 import pandas as pd
+from datetime import datetime, timezone 
+import sys
+import io
+from io import BytesIO
+import os
 from office365.sharepoint.client_context import ClientContext
 from office365.runtime.auth.client_credential import ClientCredential
 from office365.sharepoint.client_context import ClientContext
@@ -15,10 +20,6 @@ from office365.sharepoint.listitems.listitem import ListItem
 from office365.sharepoint.listitems.caml.query import CamlQuery
 from office365.sharepoint.files.file import File
 from office365.graph_client import GraphClient
-import sys
-import io
-from io import BytesIO
-import os
 
 
 ### information for authentication -- my org didn't allow basic (username,password) so they had to register an app in azure and provide me with the credetials.
@@ -57,6 +58,7 @@ try:
     
 
     sharepoint_folder_name = 'Shared Documents/SUBFOLDER/FOLDER'            {entry required}
+    now_utc = datetime.now(timezone.utc).strftime("%m/%d/%Y %H:%M:%S UTC")
  
     credentials = ClientCredential(client_id, client_secret)
     ctx = ClientContext(site_url).with_credentials(credentials)
@@ -68,7 +70,7 @@ try:
         uploaded_file = target_folder.upload_file(file_name, f.read())
         ctx.execute_query()
         
-        print(f"File '{file_name}' uploaded successfully to '{sharepoint_folder_name}'")
+        print(f"File '{file_name}' uploaded successfully to '{sharepoint_folder_name}'published at '{now_utc}'")
 
 except Exception as e:
     print(f"Error uploading file: {e}")
